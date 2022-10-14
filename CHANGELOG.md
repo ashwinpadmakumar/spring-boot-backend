@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Issue and Pull Request templates
+- [.editorconfig](https://editorconfig.org) file
 - `PhoneNumber` annotation for validating phone numbers - **Thank you `@mepox`**
   - Use custom `PhoneNumberValidator`, subclass of `javax.validation.ValidationConstraint`, which validates using regular expression
   - Configure the regular expression through `trebol.validation.phonenumber-regexp` in `application.properties`
@@ -18,14 +20,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - **BREAKING CHANGE**: Rename table names to follow the naming convention - **Thank you `@mepox`**
-	- `products_categories` 			-> `product_categories`
-	- `products_images` 				-> `should be product_images`
-	- `sales_statuses` 				-> `should be sell_statuses`
-	- `app_users_roles` 				-> `should be app_user_roles`
-	- `app_users_roles_permissions` -> `should be app_user_role_permissions`
+    - `products_categories` 			-> `product_categories`
+    - `products_images` 				-> `should be product_images`
+    - `sales_statuses` 				-> `should be sell_statuses`
+    - `app_users_roles` 				-> `should be app_user_roles`
+    - `app_users_roles_permissions` -> `should be app_user_role_permissions`
+- Update to latest Spring Boot patch (as of Oct 12th, 2022)
+  - `spring-boot-starter-parent` - `2.6.4` to `2.6.12`
 
 ### Tests
-
+- CompanyServiceImpl - validate the proper mapping behaviour of method "readDetails"
 - Add `mockito-inline` dependency to create inline mocks - **Thank you `@NyorJa`**
     - Useful to mock final classes and methods, also for having constant regex
 - Add TestConstants to hold some static final values for use with mocks - **Thank you `@NyorJa`**
